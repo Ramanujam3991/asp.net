@@ -2,7 +2,21 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@model Triangle
+<html>
+<head>
+</head>
+<body>
+    <div asp-validation-summary="All"></div>
+    <form asp-action="Index" method="post">
+        <label asp-for="height">Enter Height</label>
+        <input asp-for="height" />
+        <label asp-for="breadth">Enter breadth</label>
+        <input asp-for="breadth" />
+        <label>Area of Triangle:</label>
+        <input value="@ViewBag.Area.ToString()" readonly />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>

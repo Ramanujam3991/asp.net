@@ -18,9 +18,17 @@ namespace week2_single_page_application.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Area = 0;
             return View();
+        }
+        [HttpPost]
+        public IActionResult Index(Triangle model)
+        {
+            
+            return View(model);
         }
 
         public IActionResult Privacy()
