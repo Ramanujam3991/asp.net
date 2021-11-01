@@ -27,7 +27,10 @@ namespace week2_single_page_application.Controllers
         [HttpPost]
         public IActionResult Index(Triangle model)
         {
-            
+            if (ModelState.IsValid)
+                ViewBag.Area = model.area();
+            else
+                ViewBag.Area = 0;
             return View(model);
         }
 
